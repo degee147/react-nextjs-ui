@@ -3,17 +3,21 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styled, { DefaultTheme } from 'styled-components';
 import Select from '@paljs/ui/Select';
+import { Card, CardBody } from '@paljs/ui/Card';
 import { LayoutHeader } from '@paljs/ui/Layout';
 import { EvaIcon } from '@paljs/ui/Icon';
+import { Actions, ActionType } from '@paljs/ui/Actions';
 import { Button } from '@paljs/ui/Button';
-import { Actions } from '@paljs/ui/Actions';
+import Row from '@paljs/ui/Row';
+import Col from '@paljs/ui/Col';
 import ContextMenu from '@paljs/ui/ContextMenu';
 import User from '@paljs/ui/User';
 import { breakpointDown } from '@paljs/ui/breakpoints';
+import Image from 'next/image'
 
 const HeaderStyle = styled.div`
   display: flex;
-  width: 100%;
+  width: 100%;  
   justify-content: space-between;
   ${breakpointDown('sm')`
     .right{
@@ -61,6 +65,17 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = (props) => {
   const router = useRouter();
+  const items: ActionType[] = [
+    {
+      icon: 'browser-outline',
+      link: { href: '/' },
+      badge: {
+        status: 'Primary',
+        title: '34',
+        position: 'topRight',
+      },
+    },
+  ];
   const themeOptions = () => [
     {
       value: 'default',
@@ -107,6 +122,22 @@ const Header: React.FC<HeaderProps> = (props) => {
           size="Medium"
           actions={[
             {
+              content: (
+                <>
+                  <div className="logo_container">
+                    <Link href="/">
+                      <Image src='/logo.png' layout="fill" alt="Logo" />
+                    </Link>
+                    <style jsx>{`
+                      .logo_container {
+                        width: 150px;
+                      }
+                    `}</style>
+                  </div>
+                </>
+              ),
+            },
+            {
               icon: { name: 'menu-2-outline' },
               url: {
                 onClick: props.toggleSidebar,
@@ -114,78 +145,89 @@ const Header: React.FC<HeaderProps> = (props) => {
             },
             {
               content: (
-                <Link href="/">
-                  <a className="logo">Admin Template</a>
-                </Link>
+                <span className="">GEMS Modern Academy School</span>
               ),
             },
-            {
-              content: (
-                <SelectStyled
-                  instanceId="react-select-input"
-                  isSearchable={false}
-                  shape="SemiRound"
-                  placeholder="Themes"
-                  value={themeOptions().find((item) => item.value === props.theme.value)}
-                  options={themeOptions()}
-                  onChange={({ value }: { value: DefaultTheme['name'] }) => props.theme.set(value)}
-                />
-              ),
-            },
-            {
-              content: (
-                <Button size="Small" onClick={() => props.changeDir()}>
-                  {props.dir}
-                </Button>
-              ),
-            },
+            // {
+            //   content: (
+            //     <SelectStyled
+            //       instanceId="react-select-input"
+            //       isSearchable={false}
+            //       shape="SemiRound"
+            //       placeholder="Themes"
+            //       value={themeOptions().find((item) => item.value === props.theme.value)}
+            //       options={themeOptions()}
+            //       onChange={({ value }: { value: DefaultTheme['name'] }) => props.theme.set(value)}
+            //     />
+            //   ),
+            // },
+            // {
+            //   content: (
+            //     <Button size="Small" onClick={() => props.changeDir()}>
+            //       {props.dir}
+            //     </Button>
+            //   ),
+            // },
           ]}
         />
         <Actions
           size="Small"
           className="right"
           actions={[
+            // {
+            //   content: (
+            //     <a href="https://discord.gg/NRmdvDxsT8" target="_blank" rel="noreferrer">
+            //       <img height="20" src="/discord.svg" alt="slack" />
+            //     </a>
+            //   ),
+            // },
             {
               content: (
-                <a
-                  className="left"
-                  href={`https://github.com/paljs/nextjs-admin-template`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <span className="github">Support us in GitHub</span>
-                  <img src={`https://badgen.net/github/stars/paljs/nextjs-admin-template`} />
-                </a>
+                <Actions Link={Link} size="Large" actions={items} />
               ),
             },
             {
               content: (
-                <a href="https://discord.gg/NRmdvDxsT8" target="_blank" rel="noreferrer">
-                  <img height="20" src="/discord.svg" alt="slack" />
-                </a>
+                <div>
+                  <img height="45" src="/header_img1.png" alt="slack" />
+                </div>
               ),
-            },
-            {
-              icon: 'twitter',
-              url: { href: 'https://twitter.com/AhmedElywh', target: '_blank' },
             },
             {
               content: (
-                <ContextMenu
-                  nextJs
-                  style={{ cursor: 'pointer' }}
-                  placement="bottom"
-                  currentPath={router.pathname}
-                  items={[
-                    { title: 'Profile', link: { href: '/modal-overlays/tooltip' } },
-                    { title: 'Log out', link: { href: '/logout' } },
-                  ]}
-                  Link={Link}
-                >
-                  <User image="url('/icons/icon-72x72.png')" name="Ahmed Elywa" title="Manger" size="Medium" />
-                </ContextMenu>
+                <div>
+                  <img height="45" src="/header_img2.png" alt="slack" />
+                </div>
               ),
             },
+            {
+              content: (
+                <div>
+                  <img height="45" src="/header_img3.png" alt="slack" />
+                </div>
+              ),
+            },
+            // {
+            //   icon: 'twitter',
+            //   url: { href: 'https://twitter.com/AhmedElywh', target: '_blank' },
+            // },
+            // {
+            //   content: (
+            //     <ContextMenu
+            //       nextJs
+            //       style={{ cursor: 'pointer' }}
+            //       placement="bottom"
+            //       currentPath={router.pathname}
+            //       items={[
+            //         { title: 'Profile', link: { href: '/modal-overlays/tooltip' } },
+            //         { title: 'Log out', link: { href: '/logout' } },
+            //       ]}
+            //       Link={Link}
+            //     >
+            //       <User image="url('/icons/icon-72x72.png')" name="Ahmed Elywa" title="Manger" size="Medium" />
+            //     </ContextMenu>
+            //   ),
+            // },
           ]}
         />
       </HeaderStyle>

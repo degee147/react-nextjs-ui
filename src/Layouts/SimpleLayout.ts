@@ -11,6 +11,10 @@ ${({ theme }) => css`
   .column.small {
     flex: 0.15 !important;
   }
+  
+  header > nav {
+    border-bottom: 4px solid #81CCE5;
+  }
 
   .auth-layout {
     .main-content {
