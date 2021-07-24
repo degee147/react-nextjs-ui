@@ -188,16 +188,45 @@ const Header: React.FC<HeaderProps> = (props) => {
             },
             {
               content: (
-                <div>
-                  <img height="45" src="/header_img1.png" alt="slack" />
-                </div>
+                <>
+                  <ContextMenu
+                    nextJs
+                    currentPath={router.pathname}
+                    // className="with-margin inline-block"
+                    placement="bottom"
+                    items={[
+                      { title: 'Item 1', link: { href: '/item' } },
+                      { title: 'Item 2', link: { href: '/item' } },
+                    ]}
+                    Link={Link}
+                  >
+                    <div>
+                      <img height="45" src="/header_img1.png" alt="slack" />
+                    </div>
+                  </ContextMenu>
+                </>
+
               ),
             },
             {
               content: (
-                <div>
-                  <img height="45" src="/header_img2.png" alt="slack" />
-                </div>
+                <>
+                  <ContextMenu
+                    nextJs
+                    currentPath={router.pathname}
+                    // className="with-margin inline-block"
+                    placement="bottom"
+                    items={[
+                      { title: 'Item 1', link: { href: '/item' } },
+                      { title: 'Item 2', link: { href: '/item' } },
+                    ]}
+                    Link={Link}
+                  >
+                    <div>
+                      <img height="50" src="/header_img2.png" alt="slack" />
+                    </div>
+                  </ContextMenu>
+                </>
               ),
             },
             {
@@ -209,7 +238,7 @@ const Header: React.FC<HeaderProps> = (props) => {
             },
             // {
             //   icon: 'twitter',
-            //   url: { href: 'https://twitter.com/AhmedElywh', target: '_blank' },
+            //   url: {href: 'https://twitter.com/AhmedElywh', target: '_blank' },
             // },
             // {
             //   content: (
