@@ -7,6 +7,7 @@ import { SidebarBody, SidebarRefObject, Sidebar } from '@paljs/ui/Sidebar';
 import Header from './Header';
 import SimpleLayout from './SimpleLayout';
 import { useRouter } from 'next/router';
+import Image from 'next/image'
 // import { EvaIcon } from '@paljs/ui/Icon';
 // import { Button } from '@paljs/ui/Button';
 import { Menu, MenuRefObject } from '@paljs/ui/Menu';
@@ -82,9 +83,12 @@ const LayoutPage: React.FC<SEOProps> = ({ children, ...rest }) => {
                   className="menu-sidebar"
                 >
                   {seeHeader && (
-                    <header>
-                    <User image="url('/icons/icon-72x72.png')" name="Ahmed Elywa" title="Manger" size="Medium" />
-                    </header>
+
+                    <div>
+                      {/* <Image src='/sidebar_user.png' layout="fill" alt="Logo" /> */}
+                      <img style={{ height: "100%", width: "100%" }} src="/sidebar_user.png" alt="slack" />
+                      {/* <User image="url('/icons/icon-72x72.png')" name="Abdulah" title="VII-A" size="Medium" /> */}
+                    </div>
                   )}
                   <SidebarBody>
                     <Menu

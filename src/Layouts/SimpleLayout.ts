@@ -86,6 +86,18 @@ ${({ theme }) => css`
   .ck-content {
     min-height: 20rem;
   }
+
+  .scrollable{
+    background-color: #001B4A;
+  }
+  .scrollable .menu-title{
+    color:white;
+  }
+  .menu-item a.active{
+    background-color: #20A6D2 !important;
+    width: 270px !important;
+    z-index:9999999999 !important;
+  }
 `}
 `;
 export default SimpleLayout;
