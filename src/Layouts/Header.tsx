@@ -2,16 +2,16 @@ import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styled, { DefaultTheme } from 'styled-components';
-import Select from '@paljs/ui/Select';
-import { Card, CardBody } from '@paljs/ui/Card';
+// import Select from '@paljs/ui/Select';
+// import { Card, CardBody } from '@paljs/ui/Card';
 import { LayoutHeader } from '@paljs/ui/Layout';
-import { EvaIcon } from '@paljs/ui/Icon';
+// import { EvaIcon } from '@paljs/ui/Icon';
 import { Actions, ActionType } from '@paljs/ui/Actions';
-import { Button } from '@paljs/ui/Button';
-import Row from '@paljs/ui/Row';
-import Col from '@paljs/ui/Col';
+// import { Button } from '@paljs/ui/Button';
+// import Row from '@paljs/ui/Row';
+// import Col from '@paljs/ui/Col';
 import ContextMenu from '@paljs/ui/ContextMenu';
-import User from '@paljs/ui/User';
+// import User from '@paljs/ui/User';
 import { breakpointDown } from '@paljs/ui/breakpoints';
 import Image from 'next/image'
 
@@ -44,14 +44,14 @@ const HeaderStyle = styled.div`
   }
 `;
 
-const Label = styled.span`
-  display: flex;
-  align-items: center;
-`;
+// const Label = styled.span`
+//   display: flex;
+//   align-items: center;
+// `;
 
-const SelectStyled = styled(Select)`
-  min-width: 150px;
-`;
+// const SelectStyled = styled(Select)`
+//   min-width: 150px;
+// `;
 
 interface HeaderProps {
   toggleSidebar: () => void;
@@ -76,45 +76,45 @@ const Header: React.FC<HeaderProps> = (props) => {
       },
     },
   ];
-  const themeOptions = () => [
-    {
-      value: 'default',
-      label: (
-        <Label>
-          <EvaIcon name="droplet" options={{ fill: '#a6c1ff' }} />
-          Default
-        </Label>
-      ),
-    },
-    {
-      value: 'dark',
-      label: (
-        <Label>
-          <EvaIcon name="droplet" options={{ fill: '#192038' }} />
-          Dark
-        </Label>
-      ),
-    },
-    {
-      value: 'cosmic',
-      label: (
-        <Label>
-          <EvaIcon name="droplet" options={{ fill: '#5a37b8' }} />
-          Cosmic
-        </Label>
-      ),
-    },
-    {
-      value: 'corporate',
-      label: (
-        <Label>
-          <EvaIcon name="droplet" options={{ fill: '#3366ff' }} />
-          Corporate
-        </Label>
-      ),
-      selected: true,
-    },
-  ];
+  // const themeOptions = () => [
+  //   {
+  //     value: 'default',
+  //     label: (
+  //       <Label>
+  //         <EvaIcon name="droplet" options={{ fill: '#a6c1ff' }} />
+  //         Default
+  //       </Label>
+  //     ),
+  //   },
+  //   {
+  //     value: 'dark',
+  //     label: (
+  //       <Label>
+  //         <EvaIcon name="droplet" options={{ fill: '#192038' }} />
+  //         Dark
+  //       </Label>
+  //     ),
+  //   },
+  //   {
+  //     value: 'cosmic',
+  //     label: (
+  //       <Label>
+  //         <EvaIcon name="droplet" options={{ fill: '#5a37b8' }} />
+  //         Cosmic
+  //       </Label>
+  //     ),
+  //   },
+  //   {
+  //     value: 'corporate',
+  //     label: (
+  //       <Label>
+  //         <EvaIcon name="droplet" options={{ fill: '#3366ff' }} />
+  //         Corporate
+  //       </Label>
+  //     ),
+  //     selected: true,
+  //   },
+  // ];
   return (
     <LayoutHeader fixed>
       <HeaderStyle>
