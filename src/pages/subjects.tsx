@@ -1,6 +1,6 @@
 import Progress from '@paljs/ui/ProgressBar';
 import { Status } from '@paljs/ui/types';
-import { Card, CardBody } from '@paljs/ui/Card';
+import { Card, CardBody, CardHeader } from '@paljs/ui/Card';
 import { Button } from '@paljs/ui/Button';
 // import { Actions } from '@paljs/ui/Actions';
 import Row from '@paljs/ui/Row';
@@ -9,8 +9,9 @@ import styled from 'styled-components';
 import React, { useState, useEffect } from 'react';
 import Layout from 'Layouts';
 import { EvaIcon } from '@paljs/ui/Icon';
-// import Image from 'next/image'
+import Image from 'next/image'
 import Select from '@paljs/ui/Select';
+import Badge from '@paljs/ui/Badge';
 
 const SelectStyled = styled(Select)`
   width: 200px;
@@ -89,7 +90,15 @@ export default function Subjects() {
       <Row>
         <Col breakPoint={{ xs: 12, md: 4 }}>
           <Card>
+            <header style={{ position: 'relative', padding: 0 }}>
+              <Badge status="Primary" position="topRight" style={{ marginTop: 10, marginRight: 10, fontSize: 22 }}>
+                2 Modules
+              </Badge>
+            </header>
             <img height={150} src="/subjects/subject1.png" alt="slack" />
+            <CardHeader>
+
+            </CardHeader>
             <CardBody>
               <p style={{ margin: 0, color: "#20A6D2" }}>14/20 CREDITS</p>
               <h6 style={{ margin: 0 }}>Force, Work and Energy</h6>
@@ -102,6 +111,11 @@ export default function Subjects() {
         </Col>
         <Col breakPoint={{ xs: 12, md: 4 }}>
           <Card>
+            <header style={{ position: 'relative', padding: 0 }}>
+              <Badge status="Primary" position="topRight" style={{ marginTop: 10, marginRight: 10, fontSize: 22 }}>
+                2 Modules
+              </Badge>
+            </header>
             <img height={150} src="/subjects/subject2.png" alt="slack" />
             <CardBody>
               <p style={{ margin: 0, color: "#20A6D2" }}>14/20 CREDITS</p>
@@ -115,6 +129,11 @@ export default function Subjects() {
         </Col>
         <Col breakPoint={{ xs: 12, md: 4 }}>
           <Card>
+            <header style={{ position: 'relative', padding: 0 }}>
+              <Badge status="Primary" position="topRight" style={{ marginTop: 10, marginRight: 10, fontSize: 22 }}>
+                2 Modules
+              </Badge>
+            </header>
             <img height={150} src="/subjects/subject3.png" alt="slack" />
             <CardBody>
               <p style={{ margin: 0, color: "#20A6D2" }}>14/20 CREDITS</p>
@@ -128,6 +147,11 @@ export default function Subjects() {
         </Col>
         <Col breakPoint={{ xs: 12, md: 4 }}>
           <Card>
+            <header style={{ position: 'relative', padding: 0 }}>
+              <Badge status="Primary" position="topRight" style={{ marginTop: 10, marginRight: 10, fontSize: 22 }}>
+                2 Modules
+              </Badge>
+            </header>
             <img height={150} src="/subjects/subject4.png" alt="slack" />
             <CardBody>
               <p style={{ margin: 0, color: "#20A6D2" }}>14/20 CREDITS</p>
@@ -141,6 +165,11 @@ export default function Subjects() {
         </Col>
         <Col breakPoint={{ xs: 12, md: 4 }}>
           <Card>
+            <header style={{ position: 'relative', padding: 0 }}>
+              <Badge status="Primary" position="topRight" style={{ marginTop: 10, marginRight: 10, fontSize: 22 }}>
+                2 Modules
+              </Badge>
+            </header>
             <img height={150} src="/subjects/subject1.png" alt="slack" />
             <CardBody>
               <p style={{ margin: 0, color: "#20A6D2" }}>14/20 CREDITS</p>
