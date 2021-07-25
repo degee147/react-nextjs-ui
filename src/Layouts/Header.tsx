@@ -2,14 +2,14 @@ import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styled, { DefaultTheme } from 'styled-components';
+import { EvaIcon } from '@paljs/ui/Icon';
 // import Select from '@paljs/ui/Select';
 // import { Card, CardBody } from '@paljs/ui/Card';
 import { LayoutHeader } from '@paljs/ui/Layout';
-// import { EvaIcon } from '@paljs/ui/Icon';
 import { Actions, ActionType } from '@paljs/ui/Actions';
 // import { Button } from '@paljs/ui/Button';
-// import Row from '@paljs/ui/Row';
-// import Col from '@paljs/ui/Col';
+import Row from '@paljs/ui/Row';
+import Col from '@paljs/ui/Col';
 import ContextMenu from '@paljs/ui/ContextMenu';
 // import User from '@paljs/ui/User';
 import { breakpointDown } from '@paljs/ui/breakpoints';
@@ -42,12 +42,20 @@ const HeaderStyle = styled.div`
       margin-right: 5px;
     }
   }
+  .topmenu1:after{
+    content: '▼';
+    float: right;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+  .topmenu1{
+    min-width: 140px;
+  }
+
 `;
 
-// const Label = styled.span`
-//   display: flex;
-//   align-items: center;
-// `;
+// 
+
 
 // const SelectStyled = styled(Select)`
 //   min-width: 150px;
@@ -76,45 +84,6 @@ const Header: React.FC<HeaderProps> = (props) => {
       },
     },
   ];
-  // const themeOptions = () => [
-  //   {
-  //     value: 'default',
-  //     label: (
-  //       <Label>
-  //         <EvaIcon name="droplet" options={{ fill: '#a6c1ff' }} />
-  //         Default
-  //       </Label>
-  //     ),
-  //   },
-  //   {
-  //     value: 'dark',
-  //     label: (
-  //       <Label>
-  //         <EvaIcon name="droplet" options={{ fill: '#192038' }} />
-  //         Dark
-  //       </Label>
-  //     ),
-  //   },
-  //   {
-  //     value: 'cosmic',
-  //     label: (
-  //       <Label>
-  //         <EvaIcon name="droplet" options={{ fill: '#5a37b8' }} />
-  //         Cosmic
-  //       </Label>
-  //     ),
-  //   },
-  //   {
-  //     value: 'corporate',
-  //     label: (
-  //       <Label>
-  //         <EvaIcon name="droplet" options={{ fill: '#3366ff' }} />
-  //         Corporate
-  //       </Label>
-  //     ),
-  //     selected: true,
-  //   },
-  // ];
   return (
     <LayoutHeader fixed>
       <HeaderStyle>
@@ -148,26 +117,6 @@ const Header: React.FC<HeaderProps> = (props) => {
                 <span className="">GEMS Modern Academy School</span>
               ),
             },
-            // {
-            //   content: (
-            //     <SelectStyled
-            //       instanceId="react-select-input"
-            //       isSearchable={false}
-            //       shape="SemiRound"
-            //       placeholder="Themes"
-            //       value={themeOptions().find((item) => item.value === props.theme.value)}
-            //       options={themeOptions()}
-            //       onChange={({ value }: { value: DefaultTheme['name'] }) => props.theme.set(value)}
-            //     />
-            //   ),
-            // },
-            // {
-            //   content: (
-            //     <Button size="Small" onClick={() => props.changeDir()}>
-            //       {props.dir}
-            //     </Button>
-            //   ),
-            // },
           ]}
         />
         <Actions
@@ -200,9 +149,29 @@ const Header: React.FC<HeaderProps> = (props) => {
                     ]}
                     Link={Link}
                   >
-                    <div>
-                      <img height="45" src="/header_img1.png" alt="slack" />
-                    </div>
+
+                    <Row style={{ cursor: 'pointer', minWidth: 110 }} className="topmenu1">
+                      <Col breakPoint={{ xs: 6, md: 5 }}>
+                        <span className="align-middle" style={{
+                          fontSize: 28,
+                          color: "#2053AC",
+                          justifyContent: "center",
+                          float: "right",
+                          display: "flex",
+                          alignItems: "center",
+                        }}>6,286</span>
+                      </Col>
+                      <Col breakPoint={{ xs: 6, md: 6 }}>
+                        <div>
+                          <div>
+                            <span style={{ backgroundColor: "green", color: "white", alignItems: "center", padding: 3, borderRadius: 5 }}>BEGINNER</span>
+                          </div>
+                          <div>
+                            <span className="">PLE CREDITS</span>
+                          </div>
+                        </div>
+                      </Col>
+                    </Row>
                   </ContextMenu>
                 </>
 
@@ -214,7 +183,6 @@ const Header: React.FC<HeaderProps> = (props) => {
                   <ContextMenu
                     nextJs
                     currentPath={router.pathname}
-                    // className="with-margin inline-block"
                     placement="bottom"
                     items={[
                       { title: 'Item 1', link: { href: '/item' } },
@@ -222,9 +190,16 @@ const Header: React.FC<HeaderProps> = (props) => {
                     ]}
                     Link={Link}
                   >
-                    <div>
-                      <img height="50" src="/header_img2.png" alt="slack" />
-                    </div>
+                    <Row style={{ cursor: 'pointer' }} className="topmenu1">
+                      <Col breakPoint={{ xs: 11, md: 11 }}>
+                        <div>
+                          <span>Edutech - Trainee</span>
+                        </div>
+                        <div>
+                          <span>2020 - 2021</span>
+                        </div>
+                      </Col>
+                    </Row>
                   </ContextMenu>
                 </>
               ),
@@ -236,27 +211,7 @@ const Header: React.FC<HeaderProps> = (props) => {
                 </div>
               ),
             },
-            // {
-            //   icon: 'twitter',
-            //   url: {href: 'https://twitter.com/AhmedElywh', target: '_blank' },
-            // },
-            // {
-            //   content: (
-            //     <ContextMenu
-            //       nextJs
-            //       style={{ cursor: 'pointer' }}
-            //       placement="bottom"
-            //       currentPath={router.pathname}
-            //       items={[
-            //         { title: 'Profile', link: { href: '/modal-overlays/tooltip' } },
-            //         { title: 'Log out', link: { href: '/logout' } },
-            //       ]}
-            //       Link={Link}
-            //     >
-            //       <User image="url('/icons/icon-72x72.png')" name="Ahmed Elywa" title="Manger" size="Medium" />
-            //     </ContextMenu>
-            //   ),
-            // },
+            
           ]}
         />
       </HeaderStyle>
