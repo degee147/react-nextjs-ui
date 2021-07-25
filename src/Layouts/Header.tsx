@@ -54,12 +54,6 @@ const HeaderStyle = styled.div`
 
 `;
 
-// 
-
-
-// const SelectStyled = styled(Select)`
-//   min-width: 150px;
-// `;
 
 interface HeaderProps {
   toggleSidebar: () => void;
@@ -123,13 +117,6 @@ const Header: React.FC<HeaderProps> = (props) => {
           size="Small"
           className="right"
           actions={[
-            // {
-            //   content: (
-            //     <a href="https://discord.gg/NRmdvDxsT8" target="_blank" rel="noreferrer">
-            //       <img height="20" src="/discord.svg" alt="slack" />
-            //     </a>
-            //   ),
-            // },
             {
               content: (
                 <Actions Link={Link} size="Large" actions={items} />
