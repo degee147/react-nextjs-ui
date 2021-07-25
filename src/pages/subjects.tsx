@@ -31,16 +31,16 @@ export default function Subjects() {
   // const [status, setStatus] = useState<Status>('Danger');
 
   // useEffect(() => {
-    // if (value <= 25) {
-    //   setStatus('Danger');
-    // } else if (value <= 50) {
-    //   setStatus('Warning');
-    // } else if (value <= 75) {
-    //   setStatus('Info');
-    // } else {
-    //   setStatus('Success');
-    // }
-    // setStatus('Success');
+  // if (value <= 25) {
+  //   setStatus('Danger');
+  // } else if (value <= 50) {
+  //   setStatus('Warning');
+  // } else if (value <= 75) {
+  //   setStatus('Info');
+  // } else {
+  //   setStatus('Success');
+  // }
+  // setStatus('Success');
   // }, [value]);
 
   // const setProgressValue = (newValue: number) => {
@@ -53,7 +53,7 @@ export default function Subjects() {
   return (
     <Layout title="Progress">
       <Row style={{ marginBottom: 20 }}>
-        <Col breakPoint={{ xs: 12, md: 12 }}>
+        <Col breakPoint={{ xs: 6, md: 12 }}>
           <EvaIcon name="home" /><span> </span>
           {/* <EvaIcon name="home" options={{ fill: '#3366ff',  fontSize: "150px" }} /> */}
           | <span><strong>Subjects</strong></span>  |  <span><strong>Physics</strong></span>
@@ -87,17 +87,14 @@ export default function Subjects() {
         </Col>
       </Row>
       <Row>
-        <Col breakPoint={{ xs: 12, md: 4 }}>
-          <Card>
-            <header style={{ position: 'relative', padding: 0 }}>
-              <Badge status="Primary" position="topRight" style={{ marginTop: 10, marginRight: 10, fontSize: 22 }}>
+        <Col breakPoint={{ xs: 6, md: 4 }}>
+          <Card className="subjectcard">
+            <header className="badgeheader">
+              <Badge status="Primary" position="topRight">
                 2 Modules
               </Badge>
             </header>
-            <img height={150} src="/subjects/subject1.png" alt="slack" />
-            <CardHeader>
-
-            </CardHeader>
+            <img className="subjectimage" src="/subjects/subject1.png" alt="slack" />
             <CardBody>
               <p style={{ margin: 0, color: "#20A6D2" }}>14/20 CREDITS</p>
               <h6 style={{ margin: 0 }}>Force, Work and Energy</h6>
@@ -108,14 +105,14 @@ export default function Subjects() {
             </CardBody>
           </Card>
         </Col>
-        <Col breakPoint={{ xs: 12, md: 4 }}>
-          <Card>
-            <header style={{ position: 'relative', padding: 0 }}>
-              <Badge status="Primary" position="topRight" style={{ marginTop: 10, marginRight: 10, fontSize: 22 }}>
+        <Col breakPoint={{ xs: 6, md: 4 }}>
+          <Card className="subjectcard">
+            <header className="badgeheader">
+              <Badge status="Primary" position="topRight">
                 2 Modules
               </Badge>
             </header>
-            <img height={150} src="/subjects/subject2.png" alt="slack" />
+            <img className="subjectimage" src="/subjects/subject2.png" alt="slack" />
             <CardBody>
               <p style={{ margin: 0, color: "#20A6D2" }}>14/20 CREDITS</p>
               <h6 style={{ margin: 0 }}>Evaporation</h6>
@@ -126,14 +123,14 @@ export default function Subjects() {
             </CardBody>
           </Card>
         </Col>
-        <Col breakPoint={{ xs: 12, md: 4 }}>
-          <Card>
-            <header style={{ position: 'relative', padding: 0 }}>
-              <Badge status="Primary" position="topRight" style={{ marginTop: 10, marginRight: 10, fontSize: 22 }}>
+        <Col breakPoint={{ xs: 6, md: 4 }}>
+          <Card className="subjectcard">
+            <header className="badgeheader">
+              <Badge status="Primary" position="topRight">
                 2 Modules
               </Badge>
             </header>
-            <img height={150} src="/subjects/subject3.png" alt="slack" />
+            <img className="subjectimage" src="/subjects/subject3.png" alt="slack" />
             <CardBody>
               <p style={{ margin: 0, color: "#20A6D2" }}>14/20 CREDITS</p>
               <h6 style={{ margin: 0 }}>Static Electricity</h6>
@@ -144,14 +141,14 @@ export default function Subjects() {
             </CardBody>
           </Card>
         </Col>
-        <Col breakPoint={{ xs: 12, md: 4 }}>
-          <Card>
-            <header style={{ position: 'relative', padding: 0 }}>
-              <Badge status="Primary" position="topRight" style={{ marginTop: 10, marginRight: 10, fontSize: 22 }}>
+        <Col breakPoint={{ xs: 6, md: 4 }}>
+          <Card className="subjectcard">
+            <header className="badgeheader">
+              <Badge status="Primary" position="topRight">
                 2 Modules
               </Badge>
             </header>
-            <img height={150} src="/subjects/subject4.png" alt="slack" />
+            <img className="subjectimage" src="/subjects/subject4.png" alt="slack" />
             <CardBody>
               <p style={{ margin: 0, color: "#20A6D2" }}>14/20 CREDITS</p>
               <h6 style={{ margin: 0 }}>Source of Energy</h6>
@@ -162,14 +159,14 @@ export default function Subjects() {
             </CardBody>
           </Card>
         </Col>
-        <Col breakPoint={{ xs: 12, md: 4 }}>
-          <Card>
-            <header style={{ position: 'relative', padding: 0 }}>
-              <Badge status="Primary" position="topRight" style={{ marginTop: 10, marginRight: 10, fontSize: 22 }}>
+        <Col breakPoint={{ xs: 6, md: 4 }}>
+          <Card className="subjectcard">
+            <header className="badgeheader">
+              <Badge status="Primary" position="topRight">
                 2 Modules
               </Badge>
             </header>
-            <img height={150} src="/subjects/subject1.png" alt="slack" />
+            <img className="subjectimage" src="/subjects/subject1.png" alt="slack" />
             <CardBody>
               <p style={{ margin: 0, color: "#20A6D2" }}>14/20 CREDITS</p>
               <h6 style={{ margin: 0 }}>Mass and Weight</h6>

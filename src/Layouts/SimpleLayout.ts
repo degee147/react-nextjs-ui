@@ -1,6 +1,6 @@
 import { createGlobalStyle, css } from 'styled-components';
 import GlobalStyle from '@paljs/ui/GlobalStyle';
-import { breakpointDown } from '@paljs/ui/breakpoints';
+import { breakpointDown, breakpointUp } from '@paljs/ui/breakpoints';
 
 const SimpleLayout = createGlobalStyle`
 ${({ theme }) => css`
@@ -55,9 +55,45 @@ ${({ theme }) => css`
     }
   }
 
+  .badgeheader{
+    position: relative !important;
+    padding: 0 !important;
+
+  }
+
+  .badgeheader span{
+    margin-top: 10px; 
+    margin-right: 10px;
+    font-size: 22px;
+  }
+  
+  ${breakpointUp('sm')`
+    .hideondesktop{
+      display:none;
+    }
+
+    .subjectimage{
+      height:100px;
+    }
+  `}
   ${breakpointDown('xs')`
-    .main-content {
+      .main-content {
         padding: 0.75rem !important;
+      }
+      
+      .badgeheader span{
+        font-size: 12px;
+      }
+      .subjectcard{
+        min-height: 250px;
+      }
+      .hideonmobile{
+        display:none;
+      }
+
+      #oah-layout > div.scrollable-container > div > header > nav > div > div:nth-child(1) > div:nth-child(2){
+        padding: 0;
+        margin-bottom: 10px;
       }
   `}
 

@@ -101,6 +101,13 @@ const Header: React.FC<HeaderProps> = (props) => {
               ),
             },
             {
+              content: (
+                <div className="messagemobile hideondesktop">
+                  <Actions Link={Link} size="Large" actions={items} />
+                </div>
+              ),
+            },
+            {
               icon: { name: 'menu-2-outline' },
               url: {
                 onClick: props.toggleSidebar,
@@ -108,7 +115,7 @@ const Header: React.FC<HeaderProps> = (props) => {
             },
             {
               content: (
-                <span className="">GEMS Modern Academy School</span>
+                <span className="hideonmobile">GEMS Modern Academy School</span>
               ),
             },
           ]}
@@ -198,7 +205,7 @@ const Header: React.FC<HeaderProps> = (props) => {
                 </div>
               ),
             },
-            
+
           ]}
         />
       </HeaderStyle>
