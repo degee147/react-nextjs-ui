@@ -12,6 +12,11 @@ import { EvaIcon } from '@paljs/ui/Icon';
 // import Image from 'next/image'
 import Select from '@paljs/ui/Select';
 
+const SelectStyled = styled(Select)`
+  width: 200px;
+  display:inline-block;
+`;
+
 const Container = styled.div`
   display: flex;
   align-items: center;
@@ -40,37 +45,45 @@ export default function Subjects() {
   const setProgressValue = (newValue: number) => {
     setValue(Math.min(Math.max(newValue, 0), 100));
   };
-  const positionOptions = [
+  const positionOptions = () => [
     { value: 'Relevance', label: 'Relevance' },
     { value: 'Sequence', label: 'Sequence' },
   ];
   const style = { marginBottom: '1rem' };
   return (
     <Layout title="Progress">
-      <Row style={{ marginBottom: 30 }}>
+      <Row style={{ marginBottom: 20 }}>
         <Col breakPoint={{ xs: 12, md: 12 }}>
-          <button></button>
+          <EvaIcon name="home" /><span> </span>
           {/* <EvaIcon name="home" options={{ fill: '#3366ff',  fontSize: "150px" }} /> */}
           | <span><strong>Subjects</strong></span>  |  <span><strong>Physics</strong></span>
         </Col>
       </Row>
-      <Row style={{ marginBottom: 30, alignContent: "right" }}>
-        {/* <Col breakPoint={{ xs: true }}>
-          <span><strong>Subjects</strong></span>
-        </Col>
-        <Col breakPoint={{ xs: true }}>
-          <Select options={positionOptions} isSearchable={false} placeholder="Relevance" />
-        </Col>
-        <Col breakPoint={{ xs: true }}>
-        <span><strong>Subjects</strong></span>
-        </Col> */}
+      <Row style={{ marginBottom: 10 }}>
         <Col breakPoint={{ xs: 12, md: 12 }}>
 
-          <Select style={{innerWidth:30}} options={positionOptions} isSearchable={false} placeholder="Relevance" className="inline-block" />
-          <Button appearance="outline" style={{ marginRight: 10, marginLeft: 10 }}><EvaIcon name="home" /></Button>
-          <Button appearance="outline" style={{ marginRight: 10, marginLeft: 10 }}><EvaIcon name="order" /></Button>
-          <Button appearance="outline" style={{ marginRight: 10, marginLeft: 10 }}><EvaIcon name="grid-outline" /></Button>
-          <Button appearance="outline" style={{ marginRight: 10, marginLeft: 10 }}><EvaIcon name="list-outline" /></Button>
+          <div style={{ float: "right" }}>
+            <span><strong>SORT BY</strong>  </span>
+            <SelectStyled
+              instanceId="react-select-input"
+              isSearchable={false}
+              shape="Rectangle"
+              placeholder="Relevance"
+              options={positionOptions()}
+            />
+            <Button appearance="outline" style={{ marginRight: 10, marginLeft: 10 }}><EvaIcon name="arrowhead-down" /></Button>
+            <Button appearance="outline" style={{ marginRight: 10, marginLeft: 10 }}><EvaIcon name="arrowhead-up" /></Button>
+            {/* <Button appearance="outline" style={{ marginRight: 10, marginLeft: 10 }}><EvaIcon name="flip" /></Button> */}
+            <SelectStyled
+              instanceId="react-select-input"
+              isSearchable={false}
+              shape="Rectangle"
+              placeholder="Filter By"
+              options={positionOptions()}
+            />
+            <Button appearance="outline" style={{ marginRight: 10, marginLeft: 10 }}><EvaIcon name="grid-outline" /></Button>
+            <Button appearance="outline" style={{ marginRight: 10, marginLeft: 10 }}><EvaIcon name="list-outline" /></Button>
+          </div>
         </Col>
       </Row>
       <Row>
