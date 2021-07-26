@@ -66,6 +66,10 @@ ${({ theme }) => css`
     margin-right: 10px;
     font-size: 22px;
   }
+
+  nav{
+    padding-left:0 !important;
+  }
   
   ${breakpointUp('sm')`
     .hideondesktop{
@@ -80,6 +84,12 @@ ${({ theme }) => css`
       .main-content {
         padding: 0.75rem !important;
       }
+
+      /*
+      .main-container{
+        width:100% !important;
+      }
+      */
       
       .badgeheader span{
         font-size: 12px;

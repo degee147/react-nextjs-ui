@@ -1,15 +1,12 @@
 import Progress from '@paljs/ui/ProgressBar';
-// import { Status } from '@paljs/ui/types';
-import { Card, CardBody, CardHeader } from '@paljs/ui/Card';
+import { Card, CardBody } from '@paljs/ui/Card';
 import { Button } from '@paljs/ui/Button';
-// import { Actions } from '@paljs/ui/Actions';
 import Row from '@paljs/ui/Row';
 import Col from '@paljs/ui/Col';
 import styled from 'styled-components';
 import React from 'react';
 import Layout from 'Layouts';
 import { EvaIcon } from '@paljs/ui/Icon';
-// import Image from 'next/image'
 import Select from '@paljs/ui/Select';
 import Badge from '@paljs/ui/Badge';
 

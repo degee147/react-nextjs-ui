@@ -2,18 +2,13 @@ import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styled, { DefaultTheme } from 'styled-components';
-import { EvaIcon } from '@paljs/ui/Icon';
-// import Select from '@paljs/ui/Select';
-// import { Card, CardBody } from '@paljs/ui/Card';
 import { LayoutHeader } from '@paljs/ui/Layout';
 import { Actions, ActionType } from '@paljs/ui/Actions';
-// import { Button } from '@paljs/ui/Button';
 import Row from '@paljs/ui/Row';
 import Col from '@paljs/ui/Col';
 import ContextMenu from '@paljs/ui/ContextMenu';
-// import User from '@paljs/ui/User';
 import { breakpointDown } from '@paljs/ui/breakpoints';
-import Image from 'next/image'
+// import Image from 'next/image'
 
 const HeaderStyle = styled.div`
   display: flex;
@@ -89,11 +84,12 @@ const Header: React.FC<HeaderProps> = (props) => {
                 <>
                   <div className="logo_container">
                     <Link href="/">
-                      <Image src='/logo.png' layout="fill" alt="Logo" />
+                      {/* <Image src='/logo.png' layout="fill" alt="Logo" /> */}
+                      <img height="45" src="/logo.png" alt="slack" style={{ marginLeft: 0 }} />
                     </Link>
                     <style jsx>{`
                       .logo_container {
-                        width: 150px;
+                        width: 170px;
                       }
                     `}</style>
                   </div>
