@@ -1,5 +1,5 @@
 module.exports = {
-    trailingSlash: true,
+    // assetPrefix: ".",
     exportPathMap: async function (
         defaultPathMap,
         { dev, dir, outDir, distDir, buildId }

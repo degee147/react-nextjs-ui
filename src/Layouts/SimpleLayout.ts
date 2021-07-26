@@ -80,6 +80,13 @@ ${({ theme }) => css`
       height:100px;
     }
   `}
+  ${breakpointDown('sm')`
+      
+    .hideonmobile{
+      display:none;
+    }
+  `}
+  
   ${breakpointDown('xs')`
       .main-content {
         padding: 0.75rem !important;
@@ -96,9 +103,6 @@ ${({ theme }) => css`
       }
       .subjectcard{
         min-height: 250px;
-      }
-      .hideonmobile{
-        display:none;
       }
 
       #oah-layout > div.scrollable-container > div > header > nav > div > div:nth-child(1) > div:nth-child(2){
