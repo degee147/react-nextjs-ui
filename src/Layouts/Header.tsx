@@ -53,8 +53,8 @@ const HeaderStyle = styled.div`
 interface HeaderProps {
   toggleSidebar: () => void;
   theme: {
-    set: (value: DefaultTheme['name']) => void;
-    value: DefaultTheme['name'];
+    set: (value: "default") => void;
+    value: "default";
   };
   changeDir: () => void;
   dir: 'rtl' | 'ltr';
